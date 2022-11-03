@@ -1238,6 +1238,14 @@ template {
   opacity: 0;
 }
 
+.command__item:hover .img {
+  background-image: none;
+}
+
+.command__item:hover .img::before {
+  opacity: 1;
+}
+
 .command__item._active {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -1272,11 +1280,30 @@ template {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
-  background-image: url(assets/imgs/grid2.svg);
+  background-image: url(assets/imgs/grid-for-card.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 350px;
+  position: relative;
+}
+
+.command__item .img::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/imgs/card-hover.png);
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: .35s ease;
+  -o-transition: .35s ease;
+  transition: .35s ease;
 }
 
 .command__item .img img {
